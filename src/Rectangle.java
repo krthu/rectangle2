@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 public class Rectangle {
     private int x;
     private int y;
@@ -53,6 +55,25 @@ public class Rectangle {
     public void setHeight(double height) {
         this.height = height;
     }
+
+    public boolean checkCollision(Rectangle rectangle){
+        if (this.x > rectangle.getRightMostX() || rectangle.x > this.getRightMostX()){
+            return false;
+        } else if (this.y < rectangle.getLowestY() || rectangle.y < this.getLowestY()) {
+            return false;
+        }
+        return true;
+    }
+
+    public double getRightMostX(){
+        return (x + width);
+    }
+
+    public double getLowestY(){
+        return (y - height);
+    }
+
+
 
     public String toString(){
         return " x: " + x + " y: " + y + " width: " + width + " height: " + height;

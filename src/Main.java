@@ -1,12 +1,18 @@
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
     static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         ArrayList<Rectangle> rectangles = new ArrayList<>();
+
+//        create4Rectangles(rectangles);
+//        boolean overlap = rectangles.get(3).checkCollision(rectangles.get(2));
+//        System.out.println(overlap);
+
 
         System.out.println("Här skapar vi rektanglar");
 
@@ -18,6 +24,22 @@ public class Main {
 
     }
 
+    public static void create4Rectangles(ArrayList<Rectangle> rectangles){
+        Rectangle rectangle1 = new Rectangle(10, 10, 10, 10);
+        Rectangle rectangle2 = new Rectangle(8, 21, 21, 21);
+        Rectangle rectangle3 = new Rectangle(50, 32, 10, 10);
+        Rectangle rectangle4 = new Rectangle(12, 12, 100, 100);
+        rectangles.add(rectangle1);
+        rectangles.add(rectangle2);
+        rectangles.add(rectangle3);
+        rectangles.add(rectangle4);
+        // Rectangle 1 Should overlap with 2,4
+        // Rectangle 2 should overlap with 1,4
+        // Rectangle 3 should overlap with no one
+        // Rectangle 4 Should overlap with 1,2
+
+
+    }
     public static void rectangleMenu(Rectangle rect){
         String menuChoioce = "";
         while (!menuChoioce.equalsIgnoreCase("0")) {
